@@ -1,0 +1,2 @@
+Package.json
+    // "start": "vite --port 3000 --open --host"
