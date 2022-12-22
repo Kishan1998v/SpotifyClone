@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.grid-template-areas{
+    grid-template-areas: 
+        "sidenav main",
+        "now-playing now-playing";
+}

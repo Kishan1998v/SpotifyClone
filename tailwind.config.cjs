@@ -5,9 +5,9 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
-      colors: {
-        "spgreen": "1db954",
-        "spdark": "191414",
+      colors: {},
+      gridTemplateColumns: {
+        "auto-fill-cards": "repeat(auto-fill, minmax(200px, 1fr))",
       },
     },
   },

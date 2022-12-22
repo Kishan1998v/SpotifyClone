@@ -1,10 +1,11 @@
+import { ACCESS_TOKEN, EXPIRES_IN, TOKEN_TYPE } from "../common";
+
 //Defining the Essentials
-const Client_ID = "8efb32fc67354969a12c7f860583a300";
+const Client_ID = import.meta.env.VITE_CLIENT_ID;
+const Redirect_Uri = import.meta.env.VITE_REDIRECT_URI;
+const App_Url = import.meta.env.VITE_APP_URL;
 const Scope =
   "user-top-read user-follow-read playlist-read-private user-library-read";
-const Redirect_Uri = "http://localhost:3000/login/login.html";
-const AccessTokenKey = "accessToken";
-const App_Url = "http://localhost:3000";
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -26,9 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Stroing the Essentials we get back from Spotify in LocalStorages .
 window.setItemsInLocalStorage = ({ accessToken, tokenType, expiresIn }) => {
-  localStorage.setItem("accessToken", accessToken);
-  localStorage.setItem("tokenType", tokenType);
-  localStorage.setItem("expiresIn", expiresIn);
+  localStorage.setItem(ACCESS_TOKEN, accessToken);
+  localStorage.setItem(TOKEN_TYPE, tokenType);
+  localStorage.setItem(EXPIRES_IN, Date.now() + expiresIn * 1000);
   console.log(accessToken, expiresIn, tokenType);
   window.location.href = App_Url;
 };
@@ -41,7 +42,7 @@ window.setItemsInLocalStorage = ({ accessToken, tokenType, expiresIn }) => {
 // getting the accessCode ,tokentype, expiresIn (Link expiry) credential provided by spotify on succesfull login>
 
 window.addEventListener("load", () => {
-  const AccessToken = localStorage.getItem(AccessTokenKey); //Storing the AccessTokenKey
+  const AccessToken = localStorage.getItem(ACCESS_TOKEN); //Storing the AccessTokenKey
   if (AccessToken) {
     window.location.href = `${App_Url}/dashboard/dashboard.html`;
   }
