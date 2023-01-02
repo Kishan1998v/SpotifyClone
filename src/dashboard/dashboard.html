@@ -10,37 +10,36 @@
 <body class="h-screen bg-stone-800 text-white">
    <main class="grid h-full grid-template-areas grid-cols-[250px_1fr] grid-rows-[1fr_auto]">
     <aside class="sidenav">sidenav</aside>
-    <section class="content">
-        <header class="border-2 border-solid px-8 py-4">
-            <nav class="flex justify-end relative">
-                <button id="user-profile-btn" class="flex items-center bg-stone-700/30 gap-x-2 rounded-3xl p-0 pr-2 hover:bg-stone-700/100">
+    <article class="relative content overflow-auto bg-transparent">
+        <header class="header drop-shadow-2x px-8 py-1 bg-transparent">
+            <nav class="flex justify-end relative scroll-smooth text-s">
+                <button id="user-profile-btn" class="flex items-center bg-black/60 gap-x-2 rounded-3xl p-0 pr-2 hover:bg-black/80">
                     <section>
-                        <svg id="default-image" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 rounded-full bg-stone-700">
+                        <svg id="default-image" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-7 w-7 rounded-full bg-black/0">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
                           </svg>   
                     </section>
-                    <section  class="flex justify-center gap-x-1">
+                    <section  class="flex justify-center pb-[2.5px] gap-x-1">
                         <h3 id="display-name">Krshna</h3>
-                        <i id="" class="fa fa-name-shape-o-direction">▼</i>
+                        <h6 id="" class="text-xs pt-[5.8px] fa fa-name-shape-o-direction">▼</h6>
                     </section>
                 </button>
-                <h6 class="hidden transition delay-150 absolute top-9 mt-3 right-1 w-auto rounded-md p-1 bg-stone-600/50 drop-shadow-xl" id="display-name2">krshna</h6>
-                <ul id="profile-menu" class="absolute hidden top-12 right-0 w-[200px] text-left rounded-md p-1 bg-stone-700">
-                        <li class="w-full cursor-pointer rounded-md p-1 hover:bg-stone-500" id="">Download</li>
-                        <li class="w-full cursor-pointer rounded-md p-1 hover:bg-stone-500" id="">Setting</li>
-                        <li class="w-full h-0 my-1 rounded-md border-b-4 border-stone-600"></li>
-                        <li class="w-full cursor-pointer rounded-md p-1 hover:bg-stone-500" id="logout">Log out</li>
-                    </ul>
+                <h6 class="hidden transition delay-150 absolute top-9 mt-3 right-1 w-auto rounded-md p-1 bg-black/50 drop-shadow-xl" id="display-name2">krshna</h6>
+                <ul id="profile-menu" class="absolute hidden top-10 right-0 w-[200px] text-left rounded-md p-1 bg-stone-900/60">
+                        <li class="w-full cursor-pointer rounded-md p-1 hover:bg-black/50" id="">Download</li>
+                        <li class="w-full cursor-pointer rounded-md p-1 hover:bg-black/50" id="">Setting</li>
+                        <li class="w-full h-0 my-1 rounded-md border-b-4 border-neutral-600/50"></li>
+                        <li class="w-full cursor-pointer rounded-md p-2 hover:bg-black/50" id="logout">Log out</li>
+                </ul>
                 
             </nav>
         </header>
-        <article class="p-4 ">
-            <h1 class="text-2xl mb-4">Featured Playlist</h1>
-            <section id="featured-playlist-items" class="featured-songs grid grid-cols-auto-fill-cards gap-4" >
-                
-            </section>
+        <article id="cover-content" class="p-4 content-center absolute -z-[1] w-full grid h-72 top-0 px-8 bg-gradient-to-b from-indigo-600 to-neutral-900">
+            <h1 class="text-6xl font-bold ">Hello <span id="title-Name"></span></h1>
         </article>
-    </section>
+        <section id="page-content" class=" bg-neutral-900 mt-48">
+        </section>
+    </article>
     <footer class="now-playing">now playing</footer>
    </main>
    <script type="module" src="./dashboard.js"></script>

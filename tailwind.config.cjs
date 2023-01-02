@@ -9,7 +9,14 @@ module.exports = {
       gridTemplateColumns: {
         "auto-fill-cards": "repeat(auto-fill, minmax(200px, 1fr))",
       },
+      dropShadow: {
+        "3xl": "0 35px 35px rgba(0, 0, 0, 0.25)",
+        "4xl": [
+          "0 35px 35px rgba(0, 0, 0, 0.25)",
+          "0 45px 65px rgba(0, 0, 0, 0.15)",
+        ],
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };
