@@ -16,6 +16,7 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
-    "@tailwindcss/line-clamp": "^0.4.2"
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "dominant-color": "^0.0.1"
   }
 }

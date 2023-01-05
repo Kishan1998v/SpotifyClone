@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,1,200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
 </head>
-<body class="h-screen bg-stone-800 text-white">
+<body class="h-screen bg-black text-white">
    <main class="grid h-full grid-template-areas grid-cols-[250px_1fr] grid-rows-[1fr_auto]">
     <aside class="sidenav">sidenav</aside>
     <article class="relative content overflow-auto bg-transparent">
@@ -25,7 +28,7 @@
                     </section>
                 </button>
                 <h6 class="hidden transition delay-150 absolute top-9 mt-3 right-1 w-auto rounded-md p-1 bg-black/50 drop-shadow-xl" id="display-name2">krshna</h6>
-                <ul id="profile-menu" class="absolute hidden top-10 right-0 w-[200px] text-left rounded-md p-1 bg-stone-900/60">
+                <ul id="profile-menu" class="absolute hidden z-10 top-10 right-0 w-[200px] text-left rounded-md p-1 bg-stone-900/60">
                         <li class="w-full cursor-pointer rounded-md p-1 hover:bg-black/50" id="">Download</li>
                         <li class="w-full cursor-pointer rounded-md p-1 hover:bg-black/50" id="">Setting</li>
                         <li class="w-full h-0 my-1 rounded-md border-b-4 border-neutral-600/50"></li>
@@ -34,13 +37,46 @@
                 
             </nav>
         </header>
-        <article id="cover-content" class="p-4 content-center absolute -z-[1] w-full grid h-72 top-0 px-8 bg-gradient-to-b from-indigo-600 to-neutral-900">
-            <h1 class="text-6xl font-bold ">Hello <span id="title-Name"></span></h1>
+        <article id="cover-content" class="ContentCover py-8 content-start absolute -z-[1] w-full grid h-[30rem] top-0 px-8 ">
+            
         </article>
-        <section id="page-content" class=" bg-neutral-900 mt-48">
+        <section id="page-content" class=" bg-neutral-900/50 mt-[18rem]">
         </section>
     </article>
-    <footer class="now-playing">now playing</footer>
+    <footer class="now-playing border-t-2 p-5 border-t-neutral-800/90 bg-neutral-900 ">
+        <section class="grid grid-cols-[1fr_2fr_1fr] gap-12">
+            <!-- Track Details -->
+            <section class = "grid grid-cols-[auto_2fr_1fr] place-content-center"> 
+                <img id="player-img" class="h-[50px] w-[50px] bg-slate-400" src="" alt=" "/>
+                <section class="flex pl-4 flex-col items-start justify-center text-sm truncate">
+                    <h1 id = "player-track-title" class="font-semibold">Title</h1>
+                    <p id ="player-track-description" class="text-xs text-neutral-500">description</p>
+                </section>
+               <span id="player-like-btn" class="material-symbols-outlined item-center ml-3 cursor-pointer mt-1 py-[12px]" style="font-size: 20px">favorite</span>
+            </section>
+            <!-- Track audio controler  -->
+            <section id="player-audio-control flex flex-column" > 
+                <section class=" flex items-center text-neutral-500 justify-center  gap-3">
+                    <button id="prev" class="hover:text-white"><span class="material-symbols-rounded "  style="font-size: 30px">skip_previous</span></button>
+                    <button id="play" class="hover:text-white"><span class="material-symbols-rounded "  style="font-size: 40px">play_circle</span></button>
+                    <button id="next" class="hover:text-white"><span class="material-symbols-rounded "  style="font-size: 30px">skip_next</span></button>
+                </section>
+                <section class="w-full flex items-center justify-center pt-1 gap-2">
+                    <span id = "songDurationCompleted" class="text-xs">0:00</span>
+                    <section id="timeline" class="w-full cursor-pointer rounded-3xl bg-slate-700">
+                        <section id="progress" class="h-2 w-0 rounded-3xl bg-white"></section>
+                    </section>
+                    <span id = "totalSongDuration" class="text-xs">0:00</span>
+                </section>
+            </section>
+            <!-- Volume -->
+             <!-- section for volume -->
+            <section id="volume-control" class="flex items-center justify-center" >
+                <span class="material-symbols-outlined" style="font-size: 20px"> volume_up </span>
+                <input id="volume" type="range" name="" value="100" min="0" max="100" style="size: 12px ;  background-color: #3CBC8D;" />
+            </section>
+        </section>
+    </footer>
    </main>
    <script type="module" src="./dashboard.js"></script>
 </body>

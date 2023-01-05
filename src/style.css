@@ -2,8 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-.grid-template-areas{
-    grid-template-areas: 
-        "sidenav main",
+.grid-template-areas {
+    grid-template-areas:
+        "sidenav main"
         "now-playing now-playing";
+}
+
+.grid-template-areas .content {
+    grid-area: main;
+}
+
+.grid-template-areas .sidenav {
+    grid-area: sidenav;
+}
+
+.grid-template-areas .now-playing {
+    grid-area: now-playing;
+}
+
+.track:hover .track-no,
+.track.selected .track-no {
+    visibility: hidden;
+}
+
+.track:hover .play,
+.track.selected .play {
+    visibility: visible;
+}
+
+.ContentCover {
+    background: linear-gradient(0deg, #000, #020202, #050505, #0f0f0f, #1c1b1a, #292624, #393632, #554f47, #6e6457, #80715e);
+}
+
+.maxgridback {
+    background: linear-gradient(390deg,
+            #5555b6,
+            #4b2695,
+            #632695,
+            #6b2695,
+            #7f2695,
+            #952693,
+            #9e1978,
+            #952675,
+            #95266d, #95265d, #952639, #9e1d19, #9e3a19, #9e4319, #955f26);
+    background-size: 180% 180%;
+    animation: rainbow 5s ease infinite;
+
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 82%;
+    }
+
+    5% {
+        background-position: 100% 19%;
+    }
+
+    100% {
+        background-position: 0% 82%;
+    }
+
+
+}
+
+/* For playbutton */
+.tracks:hover .track-no {
+    visibility: hidden;
+}
+
+.tracks:hover .play {
+    visibility: visible;
 }
