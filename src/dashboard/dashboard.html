@@ -2,21 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="../Spotify_Icon.png" type="image/png">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Spotify Dashboard</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,1,200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,200" />
 </head>
 <body class="h-screen bg-black text-white">
    <main class="grid h-full grid-template-areas grid-cols-[250px_1fr] grid-rows-[1fr_auto]">
-    <aside class="sidenav">sidenav</aside>
+    <aside class="sidenav">
+        <section class="flex flex-col">
+            <section>
+                <img class="my-7 ml-5 w-40 relative"  src="./Spotify.png" alt="Spotify">
+                <section class=" absolute pt-3 flex flex-col items-start ml-6 gap-3 ">
+                    <button id="Home" class="flex items-center gap-4 text-m font-semibold text-neutral-400 hover:text-neutral-100 transition-colors duration-200"><span class="material-symbols-rounded " style="font-size:32px;">home</span><span >Home</span></button>
+                    <button id="Search" class="flex items-center gap-4 text-m font-semibold text-neutral-400 hover:text-neutral-100 transition-colors duration-200"><span class="material-symbols-rounded" style="font-size:32px;">search</span><span >Search</span></button>
+                    <button id="Your_Library" class="flex items-center gap-4 text-m font-semibold text-neutral-400 hover:text-neutral-100 transition-colors duration-200"><span class="material-symbols-rounded" style="font-size:32px;">menu</span> <span >Your Library</span></button>
+                </section>
+            </section>
+            <section>
+                <img src="" alt="">
+            </section>
+        </section>
+    </aside>
     <article class="relative content overflow-auto bg-transparent">
-        <header class="header drop-shadow-2x px-8 py-1 bg-transparent">
+        <header class="header drop-shadow-2x px-8 sticky top-0 bg-black/[0] py-3">
             <nav class="flex justify-end relative scroll-smooth text-s">
-                <button id="user-profile-btn" class="flex items-center bg-black/60 gap-x-2 rounded-3xl p-0 pr-2 hover:bg-black/80">
+                <button id="user-profile-btn" class="flex items-center bg-neutral-900/50 gap-x-2 rounded-3xl p-1 pr-2 hover:bg-black/80">
                     <section>
                         <svg id="default-image" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-7 w-7 rounded-full bg-black/0">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -37,34 +53,37 @@
                 
             </nav>
         </header>
-        <article id="cover-content" class="ContentCover py-8 content-start absolute -z-[1] w-full grid h-[30rem] top-0 px-8 ">
+        <article id="cover-content" class="ContentCover  py-8 content-start absolute -z-[1] w-full grid h-[30rem] top-0 px-8 ">
             
         </article>
         <section id="page-content" class=" bg-neutral-900/50 mt-[18rem]">
         </section>
     </article>
-    <footer class="now-playing border-t-2 p-5 border-t-neutral-800/90 bg-neutral-900 ">
-        <section class="grid grid-cols-[1fr_2fr_1fr] gap-12">
+    <footer class="now-playing border-t-2 p-[10px] border-t-neutral-800/90 bg-neutral-900 ">
+        <section class="grid grid-cols-[1fr_1.8fr_1fr] gap-12">
             <!-- Track Details -->
             <section class = "grid grid-cols-[auto_2fr_1fr] place-content-center"> 
-                <img id="player-img" class="h-[50px] w-[50px] bg-slate-400" src="" alt=" "/>
-                <section class="flex pl-4 flex-col items-start justify-center text-sm truncate">
-                    <h1 id = "player-track-title" class="font-semibold">Title</h1>
+                <img id="player-img" class="h-[60px] w-[60px] bg-slate-400" src="" alt=" "/>
+                <section class="flex pl-4 flex-col items-start justify-center text-m truncate">
+                    <h1 id = "player-track-title"  dir="rtl" class="font-semibold ">Title</h1>
                     <p id ="player-track-description" class="text-xs text-neutral-500">description</p>
                 </section>
                <span id="player-like-btn" class="material-symbols-outlined item-center ml-3 cursor-pointer mt-1 py-[12px]" style="font-size: 20px">favorite</span>
             </section>
             <!-- Track audio controler  -->
-            <section id="player-audio-control flex flex-column" > 
-                <section class=" flex items-center text-neutral-500 justify-center  gap-3">
+            <section id="player-audio-control" class="pb-0"> 
+                <section class=" flex items-center text-neutral-400 justify-center  gap-3">
+                    <button id="suffle" class="hover:text-white"><span class="material-symbols-rounded "  style="font-size: 20px">shuffle</span></button>
                     <button id="prev" class="hover:text-white"><span class="material-symbols-rounded "  style="font-size: 30px">skip_previous</span></button>
-                    <button id="play" class="hover:text-white"><span class="material-symbols-rounded "  style="font-size: 40px">play_circle</span></button>
+                    <button id="play" class="text-white"><span class="material-symbols-rounded drop-shadow-xl"  style="font-size: 40px">play_circle</span></button>
                     <button id="next" class="hover:text-white"><span class="material-symbols-rounded "  style="font-size: 30px">skip_next</span></button>
+                    <button id="repeat" class="hover:text-white"><span class="material-symbols-rounded "  style="font-size: 20px">repeat</span></button>
+                    
                 </section>
-                <section class="w-full flex items-center justify-center pt-1 gap-2">
-                    <span id = "songDurationCompleted" class="text-xs">0:00</span>
-                    <section id="timeline" class="w-full cursor-pointer rounded-3xl bg-slate-700">
-                        <section id="progress" class="h-2 w-0 rounded-3xl bg-white"></section>
+                <section class="w-full flex items-center justify-center mb-2 px-12 gap-2">
+                    <span id = "songDurationCompleted" class="text-xs ">0:00</span>
+                    <section id="timeline" class="w-full cursor-pointer rounded-3xl bg-slate-700 ">
+                        <section id="progress" class="h-1 w-0 rounded-3xl bg-white hover:h-2 "></section>
                     </section>
                     <span id = "totalSongDuration" class="text-xs">0:00</span>
                 </section>

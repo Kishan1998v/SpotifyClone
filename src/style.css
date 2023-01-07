@@ -74,3 +74,8 @@
 .tracks:hover .play {
     visibility: visible;
 }
+
+.track.playing .track-no,
+.track.playing .song-ti {
+    color: #1DB954;
+}
