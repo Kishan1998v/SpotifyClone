@@ -14,6 +14,7 @@ export const logout = () => {
   localStorage.removeItem(ACCESS_TOKEN);
   localStorage.removeItem(TOKEN_TYPE);
   localStorage.removeItem(EXPIRES_IN);
+  
   window.location.href = `${APP_URL}/login/login.html`;
 };
 
@@ -22,5 +23,5 @@ export const getItemFromLocalStorage = (key) => JSON.parse(localStorage.getItem(
 
 export const SECTIONTYPE = {
   DASHBOARD: "DASHBOARD",
-  PLAYLIST: "PLAYLIST",
+  PLAYLIST:  "PLAYLIST",
 };
