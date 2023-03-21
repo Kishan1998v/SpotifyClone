@@ -1,3 +1,5 @@
+<br />
+<br />
 <div>
 <p align="center">
   <a href="https://spotifyclonekv.netlify.app/" target="_blank" rel="noopener noreferrer">
